@@ -1,11 +1,12 @@
 <html>
 <head>
   <title> Edit Journal Entry</title>
+  <script src="http://js.nicedit.com/nicEdit-latest.js" type="text/javascript"></script>
+<script type="text/javascript">bkLib.onDomLoaded(nicEditors.allTextAreas);</script>
 </head>
 <body>
 <h3>Write your journal below</h3> <br>
-<input type ="text" id='title' value='Put your title here'></input>
-<input type="text" id='date' value='1/1/11'></input><br>
+<p>Entry Title:<input type ="text" id='title'>          </input>Pick a Date:<input type="date" id='entryDate'></input></p><br>
 <textarea id='journalEntry' rows ="16" cols="100">This is a test Text area</textarea>
 </body>
 </html>
