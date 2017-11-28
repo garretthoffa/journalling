@@ -9,5 +9,17 @@ function addNavigationBar() {
     var topNavContent = "<ul>" + homeLink + myJournalLink + loginLink + "</ul>";
     topNav.innerHTML = topNavContent;
 }
+function addFirebase(){
+   var config = {
+    apiKey: "AIzaSyCx28v6bZBNW2fq2mbPZl09tt5SZr2bFSg",
+    authDomain: "r-journaling.firebaseapp.com",
+    databaseURL: "https://r-journaling.firebaseio.com",
+    projectId: "r-journaling",
+    storageBucket: "r-journaling.appspot.com",
+    messagingSenderId: "296381439395"
+  };
+  firebase.initializeApp(config);
+}
 
+addFirebase();
 addNavigationBar();
