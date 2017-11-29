@@ -1,5 +1,5 @@
-var rootURL = "http://ec2-18-221-5-177.us-east-2.compute.amazonaws.com/git/journalling/";
-//var rootURL = "file:///D:/tsmit/Documents/CS356/journalling/";
+//var rootURL = "http://ec2-18-221-5-177.us-east-2.compute.amazonaws.com/git/journalling/";
+var rootURL = "file:///D:/tsmit/Documents/CS356/journalling/";
 
 function addNavigationBar() {
     var topNav = document.getElementById("top-nav");
@@ -23,7 +23,23 @@ function addFirebase(){
 }
 
 function createNewJournalEntry(){
-    window.location= rootURL + "journal/editor.html";
+    window.location = rootURL + "journal/editor.html";
+}
+
+function loginUser(){
+    window.location = rootURL + "journal/summary.html";
+}
+
+function sendToUserCreation(){
+    window.location = rootURL + "create.html";
+}
+
+function createUser(){
+    window.location = rootURL + "journal/summary.html";
+}
+
+function saveJournalEntry(){
+    window.alert("The save functionality has not been completed yet.");
 }
 
 addFirebase();
