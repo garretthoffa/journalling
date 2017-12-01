@@ -33,7 +33,6 @@ function appInit(){
   firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
       // User is signed in.
-      console.log("User logged in");
       var displayName = user.displayName;
       var email = user.email;
       var emailVerified = user.emailVerified;
@@ -41,7 +40,7 @@ function appInit(){
       var isAnonymous = user.isAnonymous;
       var uid = user.uid;
       var providerData = user.providerData;
-     // window.location = rootURL + "journal/summary.html";
+      window.location = rootURL + "journal/summary.html";
       // ...
     } else {
       // User is signed out.
@@ -56,12 +55,10 @@ function createNewJournalEntry(){
 
 function loginUser(){
   toggleSignIn();
-  console.log("Finishing loginUser");
 }
 
 function logoutUser(){
   toggleSignIn();
-  console.log("User logged out")
 }
 
 function sendToUserCreation(){
@@ -80,7 +77,7 @@ function saveJournalEntry(){
   var date = document.getElementById("entryDate");
   var entry = document.getElementById("journalEntry");
   firebase.database().ref('journals/' + userId).set({
-    date: [
+    [date]: [
       {"title": title},
       {"entry": entry},
     ]}
@@ -202,7 +199,8 @@ function toggleSignIn() {
 
 
 window.onload = function(){
-	addFirebase();
-	addNavigationBar();
-	appInit();
-};
+  appInit();
+}
+
+addFirebase();
+addNavigationBar();
