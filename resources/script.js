@@ -74,12 +74,12 @@ function toggleSignIn() {
             alert(errorMessage);
           }
           console.log(error);
-          document.getElementById('quickstart-sign-in').disabled = false;
+       //   document.getElementById('quickstart-sign-in').disabled = false;
           // [END_EXCLUDE]
         });
         // [END authwithemail]
       }
-      document.getElementById('quickstart-sign-in').disabled = true;
+     // document.getElementById('quickstart-sign-in').disabled = true;
     }
 
     /**
