@@ -27,6 +27,7 @@ function createNewJournalEntry(){
 }
 
 function loginUser(){
+    toggleSignIn();
     window.location = rootURL + "journal/summary.html";
 }
 
@@ -35,9 +36,9 @@ function sendToUserCreation(){
 }
 
 function createUser(){
-  handleSignUp()
-  sendEmailVerification()  
-  window.location = rootURL + "journal/summary.html";
+  handleSignUp();
+  loginUser();
+  sendEmailVerification();
 }
 
 function saveJournalEntry(){
