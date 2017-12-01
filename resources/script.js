@@ -38,7 +38,7 @@ function sendToUserCreation(){
 function createUser(){
   handleSignUp();
   loginUser();
-  sendEmailVerification();
+  //sendEmailVerification();
 }
 
 function saveJournalEntry(){
