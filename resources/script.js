@@ -22,13 +22,32 @@ function addFirebase(){
   firebase.initializeApp(config);
 }
 
+function appInit(){
+  firebase.auth().onAuthStateChanged(function(user) {
+    if (user) {
+      // User is signed in.
+      var displayName = user.displayName;
+      var email = user.email;
+      var emailVerified = user.emailVerified;
+      var photoURL = user.photoURL;
+      var isAnonymous = user.isAnonymous;
+      var uid = user.uid;
+      var providerData = user.providerData;
+      window.location = rootURL + "journal/summary.html";
+      // ...
+    } else {
+      // User is signed out.
+      // ...
+    }
+  });
+}
+
 function createNewJournalEntry(){
     window.location = rootURL + "journal/editor.html";
 }
 
 function loginUser(){
     toggleSignIn();
-    window.location = rootURL + "journal/summary.html";
 }
 
 function sendToUserCreation(){
@@ -52,7 +71,7 @@ function saveJournalEntry(){
       {"entry": entry},
     ]}
   );
-  window.alert("The save functionality has not been completed yet.");
+  //window.alert("The save functionality has not been completed yet.");
 }
 
 function toggleSignIn() {
@@ -167,5 +186,9 @@ function toggleSignIn() {
       // [END sendpasswordemail];
     }
 
-addFirebase();
-addNavigationBar();
+
+window.onload = function(){
+  addFirebase();
+  appInit();
+  addNavigationBar();
+}
