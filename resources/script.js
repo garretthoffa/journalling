@@ -6,7 +6,14 @@ function addNavigationBar() {
     var homeLink = "<li><a href=\"" + rootURL + "index.html\">Home</a></li>";
     var myJournalLink = "<li><a href=\"" + rootURL + "journal/summary.html\">My Journal</a></li>";
     var loginLink = "<li><a href=\"" + rootURL + "login.html\">Login</a></li>";
-    var topNavContent = "<ul id=\"top-nav-list\">" + homeLink + myJournalLink + loginLink + "</ul>";
+    var logoutLink = "<li><a href=\"" + rootURL + "index.html\" onclick=\"logoutUser()\">Logout</a></li>"
+    var topNavContent = "<ul id=\"top-nav-list\">" + homeLink + myJournalLink;
+    if(firebase.auth().currentUser){
+      topNavContent += logoutLink;
+    } else {
+      topNavContent += loginLink;
+    } 
+    topNavContent += "</ul>";
     topNav.innerHTML = topNavContent;
 }
 
@@ -47,7 +54,11 @@ function createNewJournalEntry(){
 }
 
 function loginUser(){
-    toggleSignIn();
+  toggleSignIn();
+}
+
+function logoutUser(){
+  toggleSignIn();
 }
 
 function sendToUserCreation(){
@@ -188,7 +199,8 @@ function toggleSignIn() {
 
 
 window.onload = function(){
-  addFirebase();
   appInit();
-  addNavigationBar();
 }
+
+addFirebase();
+addNavigationBar();
