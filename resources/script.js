@@ -42,7 +42,17 @@ function createUser(){
 }
 
 function saveJournalEntry(){
-    window.alert("The save functionality has not been completed yet.");
+  var userId = firebase.auth().currentUser.uid;
+  var title = document.getElementById("title");
+  var date = document.getElementById("entryDate");
+  var entry = document.getElementById("journalEntry");
+  firebase.database().ref('journals/' + userId).set({
+    date: [
+      {"title": title},
+      {"entry": entry},
+    ]}
+  );
+  window.alert("The save functionality has not been completed yet.");
 }
 
 function toggleSignIn() {
