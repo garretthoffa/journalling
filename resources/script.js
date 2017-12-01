@@ -88,12 +88,17 @@ function toggleSignIn() {
     function handleSignUp() {
       var email = document.getElementById('email').value;
       var password = document.getElementById('password').value;
+      var confirmPassword = document.getElementById('confirmPassword').value;
       if (email.length < 4) {
         alert('Please enter an email address.');
         return;
       }
       if (password.length < 4) {
         alert('Please enter a password.');
+        return;
+      }
+      if (password !== confirmPassword){
+        alert('Passwords do not match.');
         return;
       }
       // Sign in with email and pass.
