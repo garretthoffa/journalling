@@ -40,7 +40,6 @@ function appInit(){
       var isAnonymous = user.isAnonymous;
       var uid = user.uid;
       var providerData = user.providerData;
-      window.location = rootURL + "journal/summary.html";
       // ...
     } else {
       // User is signed out.
