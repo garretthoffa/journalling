@@ -72,9 +72,11 @@ function createUser(){
 
 function saveJournalEntry(){
   var userId = firebase.auth().currentUser.uid;
-  var title = document.getElementById("title");
-  var date = document.getElementById("entryDate");
-  var entry = document.getElementById("journalEntry");
+  var title = document.getElementById("title").value;
+  var date = document.getElementById("entryDate").value;
+ // var entry = document.getElementById("journalEntry").value;
+  var nic=nicEditors.findEditor('journalEntry');
+  var entry = nic.getContent();
   firebase.database().ref('journals/' + userId).set({
     [date]: [
       {"title": title},
