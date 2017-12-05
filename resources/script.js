@@ -1,4 +1,4 @@
-var rootURL = "http://ec2-18-221-5-177.us-east-2.compute.amazonaws.com/git/journalling/";
+var rootURL = "http://ec2-18-221-5-177.us-east-2.compute.amazonaws.com:3006/journalling/";
 //var rootURL = "file:///D:/tsmit/Documents/CS356/journalling/";
 
 function addNavigationBar() {
@@ -77,7 +77,7 @@ function saveJournalEntry(){
  // var entry = document.getElementById("journalEntry").value;
   var nic=nicEditors.findEditor('journalEntry');
   var entry = nic.getContent();
-  firebase.database().ref('journals/' + userId).set({
+  firebase.database().ref('journals/' + userId).push({
     [date]: [
       {"title": title},
       {"entry": entry},
