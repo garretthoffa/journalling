@@ -8,13 +8,23 @@ function addNavigationBar() {
     var loginLink = "<li><a href=\"" + rootURL + "login.html\">Login</a></li>";
     var logoutLink = "<li><a href=\"" + rootURL + "index.html\" onclick=\"logoutUser()\">Logout</a></li>";
     var topNavContent = "<ul id=\"top-nav-list\">" + homeLink + myJournalLink;
-    if(firebase.auth().currentUser){
+    var loginContent =topNavContent+loginLink+"</ul>";
+    var logoutContent = topNavContent+logoutLink+"</ul>";
+   /* if(userLoggedIn){
       topNavContent += logoutLink;
     } else {
       topNavContent += loginLink;
-    } 
-    topNavContent += "</ul>";
-    topNav.innerHTML = topNavContent;
+    }*/
+   topNav.innerHTML = loginContent;
+   firebase.auth().onAuthStateChanged(function(user) {
+       if (user) {
+       topNav.innerHTML = logoutContent;
+       } else {
+       topNav.innetHtml = loginContent;
+      }
+});
+   // topNavContent += "</ul>";
+   // topNav.innerHTML = topNavContent;
 }
 
 function addFirebase(){
