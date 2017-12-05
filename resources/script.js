@@ -6,7 +6,7 @@ function addNavigationBar() {
     var homeLink = "<li><a href=\"" + rootURL + "index.html\">Home</a></li>";
     var myJournalLink = "<li><a href=\"" + rootURL + "journal/summary.html\">My Journal</a></li>";
     var loginLink = "<li><a href=\"" + rootURL + "login.html\">Login</a></li>";
-    var logoutLink = "<li><a href=\"" + rootURL + "index.html\" onclick=\"logoutUser()\">Logout</a></li>"
+    var logoutLink = "<li><a href=\"" + rootURL + "index.html\" onclick=\"logoutUser()\">Logout</a></li>";
     var topNavContent = "<ul id=\"top-nav-list\">" + homeLink + myJournalLink;
     if(firebase.auth().currentUser){
       topNavContent += logoutLink;
@@ -77,12 +77,7 @@ function saveJournalEntry(){
  // var entry = document.getElementById("journalEntry").value;
   var nic=nicEditors.findEditor('journalEntry');
   var entry = nic.getContent();
-  firebase.database().ref('journals/' + userId).push({
-    [date]: [
-      {"title": title},
-      {"entry": entry},
-    ]}
-  );
+  firebase.database().ref('journals/' + userId).push({"date":[date], "title": title, "entry": entry});
   //window.alert("The save functionality has not been completed yet.");
 }
 
