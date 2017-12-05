@@ -1,8 +1,6 @@
 var rootURL = "http://ec2-18-221-5-177.us-east-2.compute.amazonaws.com:3006/journalling/";
 //var rootURL = "file:///D:/tsmit/Documents/CS356/journalling/";
 
-var userLoggedIn = false;
-
 function addNavigationBar() {
     var topNav = document.getElementById("top-nav");
     var homeLink = "<li><a href=\"" + rootURL + "index.html\">Home</a></li>";
@@ -42,10 +40,10 @@ function appInit(){
       var isAnonymous = user.isAnonymous;
       var uid = user.uid;
       var providerData = user.providerData;
-      userLoggedIn = true;
+      // ...
     } else {
       // User is signed out.
-      userLoggedIn = false;
+      // ...
     }
   });
 }
