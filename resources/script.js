@@ -123,6 +123,7 @@ function toggleSignIn() {
        //   document.getElementById('quickstart-sign-in').disabled = false;
           // [END_EXCLUDE]
         });
+        window.location = rootURL + "journal/summary.html";
         // [END authwithemail]
       }
      // document.getElementById('quickstart-sign-in').disabled = true;
