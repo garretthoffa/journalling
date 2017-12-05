@@ -21,7 +21,7 @@ function addNavigationBar() {
        topNav.innerHTML = logoutContent;
        } else {
        topNav.innetHtml = loginContent;
-      }
+	}
 });
    // topNavContent += "</ul>";
    // topNav.innerHTML = topNavContent;
@@ -39,6 +39,13 @@ function addFirebase(){
   firebase.initializeApp(config);
 }
 
+function changePageAfterLogin(){
+ firebase.auth().onAuthStateChanged(function(user) { 
+  if(user) { 
+  window.location = rootURL +"journal/summary.html";
+  }
+});
+}
 function appInit(){
   firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
@@ -51,6 +58,7 @@ function appInit(){
       var uid = user.uid;
       var providerData = user.providerData;
       // ...
+     // window.location = rootURL +"journal/summary.html";
     } else {
       // User is signed out.
       // ...
@@ -64,6 +72,7 @@ function createNewJournalEntry(){
 
 function loginUser(){
   toggleSignIn();
+ changePageAfterLogin();
 }
 
 function logoutUser(){
@@ -123,7 +132,7 @@ function toggleSignIn() {
        //   document.getElementById('quickstart-sign-in').disabled = false;
           // [END_EXCLUDE]
         });
-        window.location = rootURL + "journal/summary.html";
+        //window.location = rootURL + "journal/summary.html";
         // [END authwithemail]
       }
      // document.getElementById('quickstart-sign-in').disabled = true;
