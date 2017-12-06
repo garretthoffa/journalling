@@ -102,8 +102,8 @@ function saveJournalEntry(){
   var entry = nic.getContent();
   firebase.database().ref('journals/' + userId).push({"date": date, "title": title, "entry": entry});
   //firebase.database().ref('journals/' + userId).push({"date":[date], "title": title, "entry": entry});
-  window.location = rootURL + "journal/summary.html";
-  //window.alert("The save functionality has not been completed yet.");
+  //window.location = rootURL + "journal/summary.html";
+  window.alert("Your journal entry has been saved.");
 }
 
 
