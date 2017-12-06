@@ -39,6 +39,8 @@ function addFirebase(){
   firebase.initializeApp(config);
 }
 
+
+
 function changePageAfterLogin(){
  firebase.auth().onAuthStateChanged(function(user) { 
   if(user) { 
@@ -57,6 +59,7 @@ function appInit(){
       var isAnonymous = user.isAnonymous;
       var uid = user.uid;
       var providerData = user.providerData;
+     // getJournaltest();
       // ...
      // window.location = rootURL +"journal/summary.html";
     } else {
@@ -100,11 +103,6 @@ function saveJournalEntry(){
   //window.alert("The save functionality has not been completed yet.");
 }
 
-function getJournalEntries(){
-  var userId = firebase.auth().currentUser.uid;
-  var posts = firebase.database().ref().child(userId);
-  console.log(posts);
-}
 
 function toggleSignIn() {
       if (firebase.auth().currentUser) {
