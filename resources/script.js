@@ -88,6 +88,7 @@ function sendToUserCreation(){
 
 function createUser(){
   handleSignUp();
+  changePageAfterLogin();
   //loginUser();
   //sendEmailVerification();
 }
