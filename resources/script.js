@@ -100,6 +100,7 @@ function saveJournalEntry(){
   var nic=nicEditors.findEditor('journalEntry');
   var entry = nic.getContent();
   firebase.database().ref('journals/' + userId).push({"date":[date], "title": title, "entry": entry});
+  window.location = rootURL + "journal/summary.html";
   //window.alert("The save functionality has not been completed yet.");
 }
 
