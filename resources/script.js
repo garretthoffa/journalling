@@ -99,12 +99,9 @@ function saveJournalEntry(){
  // var entry = document.getElementById("journalEntry").value;
   var nic=nicEditors.findEditor('journalEntry');
   var entry = nic.getContent();
-<<<<<<< HEAD
   firebase.database().ref('journals/' + userId).push({"date": date, "title": title, "entry": entry});
-=======
-  firebase.database().ref('journals/' + userId).push({"date":[date], "title": title, "entry": entry});
+  //firebase.database().ref('journals/' + userId).push({"date":[date], "title": title, "entry": entry});
   window.location = rootURL + "journal/summary.html";
->>>>>>> dbca541d9ae0b5eca3f6162a9964bdacda4412fd
   //window.alert("The save functionality has not been completed yet.");
 }
 
