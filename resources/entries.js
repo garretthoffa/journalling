@@ -6,7 +6,7 @@ function getJournalTest(){
                 snapshot.forEach(function(childSnapshot) {
                     var key = childSnapshot.key;
                     var childData = childSnapshot.val();
-                    var link = "<li>"+childData.date+"</li>"
+                    var link = "<li>" + childData.date + " " + childData.title + "</li>"
                     document.getElementById("entry-list").innerHTML += link;                
                     console.log(childData);
                 });
