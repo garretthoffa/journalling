@@ -100,10 +100,14 @@ function saveJournalEntry(){
  // var entry = document.getElementById("journalEntry").value;
   var nic=nicEditors.findEditor('journalEntry');
   var entry = nic.getContent();
-  firebase.database().ref('journals/' + userId).push({"date": date, "title": title, "entry": entry});
-  //firebase.database().ref('journals/' + userId).push({"date":[date], "title": title, "entry": entry});
-  //window.location = rootURL + "journal/summary.html";
-  window.alert("Your journal entry has been saved.");
+  if(date === ""){
+    window.alert("Please choose a date for your entry.");
+  } else {
+    firebase.database().ref('journals/' + userId).push({"date": date, "title": title, "entry": entry});
+    //firebase.database().ref('journals/' + userId).push({"date":[date], "title": title, "entry": entry});
+    //window.location = rootURL + "journal/summary.html";
+    window.alert("Your journal entry has been saved.");
+  }
 }
 
 
