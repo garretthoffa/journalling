@@ -8,8 +8,8 @@ function addNavigationBar() {
     var loginLink = "<li><a href=\"" + rootURL + "login.html\">Login</a></li>";
     var logoutLink = "<li><a href=\"" + rootURL + "index.html\" onclick=\"logoutUser()\">Logout</a></li>";
     var topNavContent = "<ul id=\"top-nav-list\">";
-    var loginContent = topNavContent + myJournalLink + loginLink+"</ul>";
-    var logoutContent = topNavContent + homeLink + logoutLink+"</ul>";
+    var loginContent = topNavContent + homeLink + loginLink+"</ul>";
+    var logoutContent = topNavContent + myJournalLink + logoutLink+"</ul>";
    /* if(userLoggedIn){
       topNavContent += logoutLink;
     } else {
