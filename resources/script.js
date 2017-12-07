@@ -7,9 +7,9 @@ function addNavigationBar() {
     var myJournalLink = "<li><a href=\"" + rootURL + "journal/summary.html\">My Journal</a></li>";
     var loginLink = "<li><a href=\"" + rootURL + "login.html\">Login</a></li>";
     var logoutLink = "<li><a href=\"" + rootURL + "index.html\" onclick=\"logoutUser()\">Logout</a></li>";
-    var topNavContent = "<ul id=\"top-nav-list\">" + homeLink + myJournalLink;
-    var loginContent =topNavContent+loginLink+"</ul>";
-    var logoutContent = topNavContent+logoutLink+"</ul>";
+    var topNavContent = "<ul id=\"top-nav-list\">";
+    var loginContent = topNavContent + myJournalLink + loginLink+"</ul>";
+    var logoutContent = topNavContent + homeLink + logoutLink+"</ul>";
    /* if(userLoggedIn){
       topNavContent += logoutLink;
     } else {
