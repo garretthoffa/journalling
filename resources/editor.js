@@ -21,7 +21,7 @@ function fillJournalEditor(){
                     var date = journalEntries[entryId].date;
                     var title = journalEntries[entryId].title;
                     var entry = journalEntries[entryId].entry;
-                    document.getElementById("entryDate").valueAsDate = date;
+                    document.getElementById("entryDate").valueAsDate = new Date(date);
                     document.getElementById("title").value = title;
                     var nic=nicEditors.findEditor('journalEntry');
                     nic.setContent(entry);
