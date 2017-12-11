@@ -93,24 +93,6 @@ function createUser(){
   //sendEmailVerification();
 }
 
-function saveJournalEntry(){
-  var userId = firebase.auth().currentUser.uid;
-  var title = document.getElementById("title").value;
-  var date = document.getElementById("entryDate").value;
- // var entry = document.getElementById("journalEntry").value;
-  var nic=nicEditors.findEditor('journalEntry');
-  var entry = nic.getContent();
-  if(date === ""){
-    window.alert("Please choose a date for your entry.");
-  } else {
-    firebase.database().ref('journals/' + userId).push({"date": date, "title": title, "entry": entry});
-    //firebase.database().ref('journals/' + userId).push({"date":[date], "title": title, "entry": entry});
-    //window.location = rootURL + "journal/summary.html";
-    window.alert("Your journal entry has been saved.");
-  }
-}
-
-
 function toggleSignIn() {
       if (firebase.auth().currentUser) {
         // [START signout]
