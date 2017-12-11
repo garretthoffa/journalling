@@ -14,11 +14,13 @@ function fillJournalEntry(){
             var userId = firebase.auth().currentUser.uid;
             firebase.database().ref('/journals/' + userId).once('value').then(function(snapshot) {
                 var entryId = getParameterByName("entry");
+                var link = "<a href=\"" + rootURL + "journal/editor.html?entry=" + entryId + "\">Edit Entry<\a>"
                 var journalEntries = snapshot.val();
                 var date = journalEntries[entryId].date;
                 var title = journalEntries[entryId].title;
                 var entry = journalEntries[entryId].entry;
                 document.getElementById("date").innerHTML = date;
+                document.getElementById("edit-link").innerHTML = link;
                 document.getElementById("title").innerHTML = title;
                 document.getElementById("entry").innerHTML = entry;
             });
