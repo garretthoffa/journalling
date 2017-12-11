@@ -10,6 +10,31 @@ function getParameterByName(name, url) {
     return decodeURIComponent(results[2].replace(/\+/g, " "));
 }
 
+function fillJournalEditor(){
+    firebase.auth().onAuthStateChanged(function(user){
+        if(user){
+            var userId = firebase.auth().currentUser.uid;
+            firebase.database().ref('/journals/' + userId).once('value').then(function(snapshot) {
+                var entryId = getParameterByName("entry");
+                if(entryId !== null && entryId !== ''){
+                    var journalEntries = snapshot.val();
+                    var date = journalEntries[entryId].date;
+                    var title = journalEntries[entryId].title;
+                    var entry = journalEntries[entryId].entry;
+                    document.getElementById("entryDate").innerHTML = date;
+                    document.getElementById("title").innerHTML = title;
+                    var nic=nicEditors.findEditor('journalEntry');
+                    nic.setContent(entry);
+                } else {
+                    document.getElementById('entryDate').valueAsDate = new Date()
+                }
+            });
+        } else {
+            document.getElementById('entryDate').valueAsDate = new Date()
+        }
+    });
+}
+
 function saveJournalEntry(){
     var entryId = getParameterByName("entry");
     var userId = firebase.auth().currentUser.uid;
@@ -33,4 +58,6 @@ function saveJournalEntry(){
     window.alert("Your journal entry has been saved.");
 }
 
-document.getElementById('entryDate').valueAsDate = new Date()
+window.onload = function(){
+    fillJournalEditor();
+}
