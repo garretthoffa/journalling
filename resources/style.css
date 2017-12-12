@@ -1,5 +1,13 @@
 body {
     margin: 0px;
+    width: 100%;
+    background-color: #555555;
+}
+
+main {
+    margin: 0px auto;
+    width: 120em;
+    background-color: #EEEEEE;
 }
 
 #top-nav-list {
