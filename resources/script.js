@@ -4,7 +4,7 @@ var rootURL = "http://ec2-18-221-5-177.us-east-2.compute.amazonaws.com:3006/jour
 function addNavigationBar() {
     var topNav = document.getElementById("top-nav");
     var homeLink = "<li><a href=\"" + rootURL + "index.html\"><img src=\"" + rootURL + "resources/img/journal-icon.png\" alt=\"Journal Icon\" height=\"50\" width=\"50\">Journal Anywhere</a></li>";
-    var myJournalLink = "<li><a href=\"" + rootURL + "journal/summary.html\">My Journal</a></li>";
+    var myJournalLink = "<li><a href=\"" + rootURL + "journal/summary.html\"><img src=\"" + rootURL + "resources/img/journal-icon.png\" alt=\"Journal Icon\" height=\"50\" width=\"50\">My Journal</a></li>";
     var loginLink = "<li style=\"float:right\"><a href=\"" + rootURL + "login.html\">Login</a></li>";
     var logoutLink = "<li style=\"float:right\"><a href=\"" + rootURL + "index.html\" onclick=\"logoutUser()\">Logout</a></li>";
     var topNavContent = "<ul id=\"top-nav-list\">";
