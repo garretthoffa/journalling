@@ -3,7 +3,7 @@ var rootURL = "http://ec2-18-221-5-177.us-east-2.compute.amazonaws.com:3006/jour
 
 function addNavigationBar() {
     var topNav = document.getElementById("top-nav");
-    var homeLink = "<li><a href=\"" + rootURL + "index.html\">Home</a></li>";
+    var homeLink = "<li><a href=\"" + rootURL + "index.html\"><img src=\"" + rootURL + "\resources\img\journal-icon.jpg\" alt=\"Journal Icon\" height=\"50\" width=\"50\">Journal 2000</a></li>";
     var myJournalLink = "<li><a href=\"" + rootURL + "journal/summary.html\">My Journal</a></li>";
     var loginLink = "<li><a href=\"" + rootURL + "login.html\">Login</a></li>";
     var logoutLink = "<li><a href=\"" + rootURL + "index.html\" onclick=\"logoutUser()\">Logout</a></li>";
