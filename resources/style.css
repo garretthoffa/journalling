@@ -30,6 +30,10 @@ main {
     text-decoration: none;
 }
 
+#top-nav-list li a img{
+    float: left;
+}
+
 /* Change the link color to #111 (black) on hover */
 #top-nav-list li a:hover {
     background-color: #111;
