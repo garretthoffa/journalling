@@ -42,10 +42,6 @@ button:active {
     transform: translateY(5px);
 }
 
-#top-nav-list li .login-logout {
-    float: right;
-}
-
 #top-nav-list li {
     float: left;
 }
