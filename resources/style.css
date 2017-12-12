@@ -87,3 +87,11 @@ button:active {
     color: #0000FF;
     font-size: 25px;
 }
+
+#meta-date {
+    font-size: 25px;
+}
+
+#meta-title {
+    font-size: 25px;
+}
