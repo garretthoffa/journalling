@@ -30,6 +30,16 @@ function fillJournalEntry(){
     });
 }
 
+function downloadAsFile()
+{
+//	var fileSaver = require('file-saver');
+	var entry = document.getElementById("entry").innerHTML;
+	var blob = new Blob([entry], {type: "text/plain;charset=utf-8"});
+	var title = document.getElementById("title").innerHTML;
+	var date = document.getElementById("date").innerHTML;
+	var title = title+ " "+ date +".txt"
+	saveAs(blob,title);
+}
 window.onload = function(){
     fillJournalEntry();
 }
