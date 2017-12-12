@@ -65,9 +65,12 @@ button:active {
     background-color: #111;
 }
 
+#entry-list {
+    list-style-type: none
+}
+
 #entry-list li a {
     display: block;
-    color: #111111;
+    color: #0000FF;
     font-size: 25px;
-    text-decoration: none;
 }
