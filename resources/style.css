@@ -1,14 +1,14 @@
 body {
     margin: 0px;
     width: 100%;
-    background-color: #FFF0B3;
+    background-color: #EAE9E3;
 }
 
 main {
     margin: 0px auto;
     width: 45em;
     padding: 1em 2em;
-    background-color: #FFFAE6;
+    background-color: #FBFAF6;
 }
 
 input[type=text], input[type=password], input[type=date] {
