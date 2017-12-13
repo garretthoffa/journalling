@@ -19,7 +19,7 @@ input[type=text], input[type=password], input[type=date] {
 }
 
 button, #edit-link a {
-    background-color: #990000; /* Green */
+    background-color: #800000; /* Green */
     border: none;
     color: white;
     padding: 15px 32px;
@@ -37,13 +37,13 @@ button, #edit-link a {
 }
 
 button:hover, #edit-link a:hover {
-    background-color: #800000; /* Green */
+    background-color: #660000; /* Green */
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
     color: white;
 }
 
 button:active {
-    background-color: #800000;
+    background-color: #660000;
     transform: translateY(5px);
     box-shadow: 0 0px 0px 0 rgba(0,0,0,0.2), 0 0px 0px 0 rgba(0,0,0,0.19);
 }
@@ -57,7 +57,7 @@ button:active {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: #990000;
+    background-color: #800000;
 }
 
 #top-nav-list li {
@@ -80,7 +80,7 @@ button:active {
 
 /* Change the link color to #111 (black) on hover */
 #top-nav-list li a:hover {
-    background-color: #111;
+    background-color: #660000;
 }
 
 #entry-list {
@@ -89,7 +89,7 @@ button:active {
 
 #entry-list li a {
     display: block;
-    color: #990000;
+    color: #800000;
     font-size: 25px;
 }
 
