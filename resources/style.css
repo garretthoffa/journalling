@@ -94,11 +94,7 @@ button:active {
     font-size: 25px;
 }
 
-#metaDate {
-    font-size: 25px;
-}
-
-#metaTitle {
+#metaDate, #metaTitle, #accountName, #passwordBlock, #confirmPasswordBlock {
     font-size: 25px;
 }
 
