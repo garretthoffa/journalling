@@ -95,3 +95,7 @@ button:active {
 #metaTitle {
     font-size: 25px;
 }
+
+#saveEntry {
+    width: 723px;
+}
