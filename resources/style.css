@@ -32,6 +32,7 @@ button, #edit-link a {
 }
 
 #edit-link a {
+    float: left;
     width: 286px;
 }
 
@@ -102,4 +103,8 @@ button:active {
 
 #saveEntry {
     width: 723px;
+}
+
+#save {
+    float: right;
 }
