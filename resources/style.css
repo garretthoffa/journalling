@@ -112,9 +112,13 @@ button:active {
 }
 
 #front-title {
+    width: 100%;
+    background-color: #000000;
+    opacity: 30%;
     position: absolute;
     top: 125px;
     left: 50%;
-    color: #660000;
+    color: #FFFFFF;
+    font-family: arial;
     transform: translate(-50%, -50%);
 }
