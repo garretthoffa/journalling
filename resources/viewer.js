@@ -18,8 +18,11 @@ function fillJournalEntry(){
                 var entryId = getParameterByName("entry");
                 var link = "<a href=\"" + rootURL + "journal/editor.html?entry=" + entryId + "\">Edit Entry</a>";
                 var journalEntries = snapshot.val();
-                var date = journalEntries[entryId].date;
+                var date = new Date(journalEntries[entryId].date).toDateString();
                 var title = journalEntries[entryId].title;
+                if(title === ""){
+                    title = "No Title";
+                }
                 var entry = journalEntries[entryId].entry;
                 document.getElementById("date").innerHTML = date;
                 document.getElementById("edit-link").innerHTML = link;
