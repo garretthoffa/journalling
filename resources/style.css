@@ -103,10 +103,17 @@ button:active {
     font-size: 25px;
 }
 
-#saveEntry, #newEntry, #createaccount {
+#saveEntry, #newEntry, #createaccount, #title-holder {
     width: 723px;
 }
 
 #save {
     float: right;
+}
+
+#front-title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
