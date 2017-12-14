@@ -8,7 +8,8 @@ function getJournalTest(){
                 snapshot.forEach(function(childSnapshot) {
                     var key = childSnapshot.key;
                     var childData = childSnapshot.val();
-                    var link = "<li><a href=\"" + rootURL + "journal/viewer.html?entry=" + key + "\">" + childData.date + " " + childData.title + "</a></li>"
+                    var date = new Date(childData.date).toDateString();
+                    var link = "<li><a href=\"" + rootURL + "journal/viewer.html?entry=" + key + "\">" + date + " " + childData.title + "</a></li>"
                     document.getElementById("entry-list").innerHTML += link;                
                     console.log(childData);
                 });
