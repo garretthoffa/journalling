@@ -113,7 +113,8 @@ button:active {
 
 #front-title {
     position: absolute;
-    top: 50%;
+    top: 125px;
     left: 50%;
+    color: #660000;
     transform: translate(-50%, -50%);
 }
